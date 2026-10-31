@@ -26,7 +26,7 @@ export function DropdownMenuAvatar() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<CircleUser />} />
+      <DropdownMenuTrigger nativeButton={false} render={<CircleUser />} />
       <DropdownMenuContent align="end">
         <DropdownMenuGroup>
           <DropdownMenuItem>

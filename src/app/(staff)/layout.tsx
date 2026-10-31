@@ -1,6 +1,6 @@
+import { Suspense } from "react";
 import { requireStaff } from "@/lib/auth/guards";
 import { Navbar } from "@/components/navbar/navbar";
-import { Suspense } from "react";
 
 export default async function PortalLayout({
   children,

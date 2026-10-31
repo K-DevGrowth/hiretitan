@@ -22,7 +22,7 @@ const STAFF_NAV: NavItem[] = [
   },
   {
     label: "Phiếu đánh giá",
-    href: "/scorcard",
+    href: "/scorecards",
     permission: { scorecard: ["read"] },
   },
   { label: "Offers", href: "/offers", permission: { offer: ["read"] } },

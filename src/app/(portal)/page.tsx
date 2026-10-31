@@ -28,7 +28,7 @@ async function HomePageContent() {
     }
     // Nếu là candidate -> vào đơn ứng tuyển hoặc trang việc làm
     if (roles.includes("candidate")) {
-      redirect("/applications");
+      redirect("/careers");
     }
   }
 

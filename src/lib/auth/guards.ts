@@ -33,16 +33,30 @@ export const requirePermission = async (permissions: Permissions) => {
   return session;
 };
 
+export const requireCandidate = async () => {
+  const session = await requireSession();
+  if (hasRole(session.user.role, STAFF_ROLES as string[])) {
+    redirect(homePathFor(session.user.role));
+  }
+  return session;
+};
+
 export const requireStaff = async () => {
   const session = await requireSession();
-
   const userRoles = (session.user.role ?? "").split(",");
-
   const isStaff = userRoles.some((role) =>
     (STAFF_ROLES as string[]).includes(role),
   );
-
   if (!isStaff) redirect("/applications");
-
   return session;
+};
+
+const hasRole = (role: string | null | undefined, list: string[]) =>
+  (role ?? "").split(",").some((r) => list.includes(r));
+
+export const homePathFor = (role?: string | null) => {
+  if (hasRole(role, ["admin", "recruiter", "hiring_manager"]))
+    return "/dashboard";
+  if (hasRole(role, ["interviewer"])) return "/interviews";
+  return "/applications";
 };

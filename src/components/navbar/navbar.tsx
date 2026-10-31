@@ -34,7 +34,7 @@ export function Navbar({ variant, user }: Props) {
 
   return (
     <header className="border-b">
-      <nav className="mx-auto flex h-14 max-w-6xl items-center gap-6 px-4">
+      <nav className="mx-auto flex items-center gap-6 p-6">
         <span className="font-semibold">HireTitan</span>
 
         <ul className="flex flex-1 items-center gap-4">
